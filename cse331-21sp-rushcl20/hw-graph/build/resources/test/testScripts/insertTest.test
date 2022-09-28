@@ -1,0 +1,11 @@
+CreateGraph graphA
+AddNode graphA n1
+ListNodes graphA
+
+AddNode graphA n2
+AddNode graphA n3
+AddEdge graphA n1 n2 e1
+AddEdge graphA n1 n3 e2
+
+ListNodes graphA
+ListChildren graphA n1
