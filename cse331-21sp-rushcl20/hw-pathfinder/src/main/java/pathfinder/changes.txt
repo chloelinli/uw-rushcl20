@@ -1,0 +1,7 @@
+Briefly list any changes you made to your graph class during hw-pathfinder, and why you made those changes.
+- edges in node from Map<Object,Node> to List<Map<Object,Node>> to account for duplicate Objects or Nodes
+  in different edges (but not same Object,Node pair)
+- rewrote GraphADT class to incorporate new node/edge representation
+- added copy method to GraphADT because unable to change size of graph with final, but unable to change
+  for new graph
+- added getData method to Node class to retrieve value held by nodes

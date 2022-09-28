@@ -1,0 +1,9 @@
+CreateGraph childGraph
+AddNode childGraph A
+AddNode childGraph B
+AddNode childGraph C
+AddNode childGraph D
+AddEdge childGraph A B 1.0
+AddEdge childGraph A C 3.0
+AddEdge childGraph A D 10.0
+ListChildren childGraph A

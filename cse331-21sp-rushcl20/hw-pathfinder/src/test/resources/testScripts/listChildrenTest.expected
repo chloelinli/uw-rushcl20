@@ -1,0 +1,9 @@
+created graph childGraph
+added node A to childGraph
+added node B to childGraph
+added node C to childGraph
+added node D to childGraph
+added edge 1.000 from A to B in childGraph
+added edge 3.000 from A to C in childGraph
+added edge 10.000 from A to D in childGraph
+the children of A in childGraph are: B(1.000) C(3.000) D(10.000)
