@@ -1,0 +1,66 @@
+## CSE 331 hw-graph Part 2 Questions
+
+NOTE: This file is used as part of hw-graph-part2, and is not due as part of the hw-graph-part1
+submission. You may leave it blank for hw-graph-part1.
+
+## Section 1
+###########################################################################
+
+A few examples of possible Graph representations:
+
+    A: A collection of edges.
+    B: An adjacency list, in which each node is associated with a list of its outgoing edges.
+    C: An adjacency matrix, which explicitly represents, for every pair ⟨A,B⟩ of edges, whether there is a link from A to B, and how many.
+
+1. In two or three sentences, explain an advantage and a disadvantage of each of the
+representations listed above (for example, in terms of runtime complexity, space
+complexity, or ease of implementation).
+
+A - adv: easy to add edges between any nodes
+    dis: if collection gets too large, becomes inefficient and hard to find middle edges when removing (in the case of
+         a tree; hard to tell if you need to remove the next edge or keep it)
+B - adv: easy to add nodes and edges by just setting
+    dis: if remove, have to go through all nodes that come after node to be removed, which is slow runtime
+C - adv: easy to add edge because just need to index to certain element of matrix
+    dis: if add/remove, have to copy matrix and resize, going through all rows/columns to copy
+
+2. In two to three sentences, describe the representation you chose and explain why you
+chose it. If you chose to use a different representation than one of the three we described
+above, be sure to list its advantages and disadvantages, too.
+
+Of the given representations, the adjacency list appears to have the better advantages. We are able to keep track of
+each individual node and its outgoing edges, and if we want to add nodes/edges, we just need to reassign the value.
+Although removing nodes/edges isn't quite as easy, the runtime is much better than for an adjacency matrix.
+
+
+## Section 4
+###########################################################################
+
+    (Please keep your answers brief and to-the-point.)
+
+1. Describe any new tests you added and why you added them, or why you feel that your original
+tests alone are sufficient.
+
+I didn't change the script tests because I believed they were fine, I just don't know how they work.
+
+I added a JUnit test to test as many of the different methods as possible, even for the Nodes, so that I could be sure
+to test for all cases (that I could think of anyway).
+
+
+2. Did you make any changes to your specifications as you were implementing your Graph? (yes/no)
+If yes, describe your changes and why you made them.
+
+Yes, I definitely made changes.
+
+new constructor - to construct new graph with root node n because can create a graph with a
+single node that had outgoing edges
+
+IllegalArgumentException - added to methods to check for null nodes, if graph does/doesn't contain certain node(s), if
+edge does/doesn't exist, etc (depends on context) because wanted to do something if actions for method wasn't possible
+
+Graph -> g - changed to refer to arbitrary Graph g, because was originally referring to private object "Graph"
+
+pathfinding - removed any methods related to pathfinding because not needed in this class
+
+get/index - added methods to retrieve specific node or index because it would work different than using List methods
+(want node value to be same, not n1.equals(n2) sort of thing)

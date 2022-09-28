@@ -1,0 +1,101 @@
+## CSE 331 hw-graph Part 1 Questions
+
+## Section 1
+###########################################################################
+
+1. Write an AF and RI for IntQueue1 and IntQueue2.
+
+    ### IntQueue1
+
+    Abstraction Function:
+    AF(this) = entries[n1, n2, ..., nk]
+        where n1 is least-recently  (enqueued), next to be removed (dequeued)
+        where nk is most-recently added, last of current to be removed
+
+    Representation Invariant:
+    entries.size() == 0 or entries[i] != null if entries.size() > 0
+
+
+    ### IntQueue2
+
+    Abstraction Function:
+    AF(this) = entries[n1, n2, ..., nk]
+            where n1 is least-recently added (enqueued), next to be removed (dequeued)
+            where nk is most-recently added, last of current to be removed
+            indices don't change when add/remove, only size
+                add at (index + 1) % entries.length
+
+    Representation Invariant:
+    assert if entries.length == INITIAL_SIZE
+    assert if size == 0 and entries.isEmpty() == true
+    assert front <= size-1 and front >= 0
+
+
+2. Group the snapshots of IntQueue2's internal state into groups that have the same abstract state.
+    Same size, point at same value
+    a, d, g
+    b, h
+    c, f
+
+
+3. For each signature below, state and justify in 1-2 sentences (per part) whether the method or constructor
+could possibly expose the representation, given the information available. Explain any assumptions you made.
+
+    a. `public int solveEquations(int x, int y, int z)`
+        Probably won't expose representation because we're not modifying
+        any of the parameters being passed in.
+
+    b. `public String[] decode(boolean slowly)`
+        May expose representation by modifying String before adding to array,
+        without calling checkRep.
+
+
+    c. `private Date myBirthday()`
+        Possible to expose representation because we might call a method to
+        return a value, assign it, then modify that returned value to be returned,
+        which could potentially be out of the range in which a date should be.
+
+    d. `public String toString()`
+        Probably won't expose representation because just printing a String of values.
+
+    e. `public Iterator<Integer> elements()`
+        Possible to expose representation because might remove elements from list
+        instead of just returning, which would affect the list.
+
+    f. `public Deck(List<Card> cards)`
+        May expose representation, but if we call checkRep somewhere in the constructor,
+        could potentially avoid exposing.
+
+
+## Section 2
+###########################################################################
+
+Briefly explain why you included the operations you did and why you feel they are a sufficient
+interface to a graph. If your design includes multiple classes or interfaces, explain why you
+included each one; if not, explain whether you considered additional classes and why you decided
+not to include them.
+
+Included additional Node class because will insert Node objects into Graph.
+
+Included 3 different constructors to account for whether we start with an empty graph, a graph
+with a single node, or a graph already built (similar to RatPoly). Included 2 different insert
+methods for specific insert or insert at end of graph. Included 3 different removes to remove
+first node, or specific node (either specified node or specified index). Included method to request
+path length between nodes if we want to find shortest path to different nodes? maybe? Included
+method to request if there exists a path between nodes because then we know if it's possible to reach
+the last node. Included method to add an edge between nodes because we might be able to create a path
+with a newly inserted node. Maybe. Also included a size method to keep track of the length of the graph,
+and a method to see if there is an edge from a node to itself.
+
+
+## Section 3
+###########################################################################
+
+What was your testing strategy for this assignment? How do your script tests and JUnit tests
+differ from each other (if they do), and why?
+
+I didn't create JUnit tests because I believed that the script tests I did write covered enough given
+the valid commands we had.
+I especially wanted to test whether or not cycles could be caught, so I tested insertions, I tested
+if there were self-loops, and then I tested if there could be a trio of nodes in which they were all
+children of each other.
