@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marvel.scriptTestRunner.ScriptFileTests" tests="4" skipped="0" failures="2" errors="0" timestamp="2021-05-21T23:33:22" hostname="C-RUSHING" time="30.073">
+  <properties/>
+  <testcase name="checkOutput[exampleTestEdgeCases]" classname="marvel.scriptTestRunner.ScriptFileTests" time="0.042"/>
+  <testcase name="checkOutput[exampleTestMarvelOneHop]" classname="marvel.scriptTestRunner.ScriptFileTests" time="30.018">
+    <failure message="org.junit.runners.model.TestTimedOutException: test timed out after 30000 milliseconds" type="org.junit.runners.model.TestTimedOutException">org.junit.runners.model.TestTimedOutException: test timed out after 30000 milliseconds
+	at app//graph.GraphADT.checkRep(GraphADT.java:398)
+	at app//graph.GraphADT.add(GraphADT.java:173)
+	at app//marvel.MarvelPaths.buildGraph(MarvelPaths.java:63)
+	at app//marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:248)
+	at app//marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:243)
+	at app//marvel.scriptTestRunner.MarvelTestDriver.executeCommand(MarvelTestDriver.java:96)
+	at app//marvel.scriptTestRunner.MarvelTestDriver.runTests(MarvelTestDriver.java:70)
+	at app//marvel.scriptTestRunner.ScriptFileTests.runScriptFile(ScriptFileTests.java:153)
+	at app//marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:179)
+	at java.base@15.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@15.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base@15.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@15.0.1/java.lang.reflect.Method.invoke(Method.java:564)
+	at app//org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at app//org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at app//org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at app//org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app//org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at app//org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.base@15.0.1/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base@15.0.1/java.lang.Thread.run(Thread.java:832)
+</failure>
+  </testcase>
+  <testcase name="checkOutput[exampleTestParserSmallishGraph]" classname="marvel.scriptTestRunner.ScriptFileTests" time="0.008">
+    <failure message="org.junit.ComparisonFailure: exampleTestParserSmallishGraph expected:&lt;...th two edges each.&#10;&#10;[loaded graph heroes&#10;the children of Ernst-the-Bicycling-Wizard in heroes are: Grossman-the-Youngest-of-them-all(CSE331) Notkin-of-the-Superhuman-Beard(CSE331) Notkin-of-the-Superhuman-Beard(CSE403) Perkins-the-Magical-Singing-Instructor(CSE331])&gt; but was:&lt;...th two edges each.&#10;&#10;[Exception while running command: LoadGraph heroes staffSuperheroes.csv&#10;java.lang.IllegalArgumentException: no data or bad edges&#10; at graph.GraphADT$Node.&lt;init&gt;(GraphADT.java:445)&#10; at graph.GraphADT$Node.add(GraphADT.java:565)&#10; at marvel.MarvelPaths.buildGraph(MarvelPaths.java:78)&#10; at marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:248)&#10; at marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:243)&#10; at marvel.scriptTestRunner.MarvelTestDriver.executeCommand(MarvelTestDriver.java:96)&#10; at marvel.scriptTestRunner.MarvelTestDriver.runTests(MarvelTestDriver.java:70)&#10; at marvel.scriptTestRunner.ScriptFileTests.runScriptFile(ScriptFileTests.java:153)&#10; at marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:179)&#10; at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#10; at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)&#10; at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#10; at java.base/java.lang.reflect.Method.invoke(Method.java:564)&#10; at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#10; at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#10; at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#10; at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#10; at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)&#10; at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)&#10; at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)&#10; at java.base/java.lang.Thread.run(Thread.java:832)&#10;Exception while running command: ListChildren heroes Ernst-the-Bicycling-Wizard&#10;java.lang.NullPointerException: Cannot invoke &quot;java.util.Map.get(Object)&quot; because &quot;nodes&quot; is null&#10; at marvel.scriptTestRunner.MarvelTestDriver.listChildren(MarvelTestDriver.java:219)&#10; at marvel.scriptTestRunner.MarvelTestDriver.listChildren(MarvelTestDriver.java:214)&#10; at marvel.scriptTestRunner.MarvelTestDriver.executeCommand(MarvelTestDriver.java:93)&#10; at marvel.scriptTestRunner.MarvelTestDriver.runTests(MarvelTestDriver.java:70)&#10; at marvel.scriptTestRunner.ScriptFileTests.runScriptFile(ScriptFileTests.java:153)&#10; at marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:179)&#10; at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#10; at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)&#10; at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#10; at java.base/java.lang.reflect.Method.invoke(Method.java:564)&#10; at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#10; at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#10; at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#10; at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#10; at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)&#10; at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)&#10; at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)&#10; at java.base/java.lang.Thread.run(Thread.java:832])&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: exampleTestParserSmallishGraph expected:&lt;...th two edges each.
+
+[loaded graph heroes
+the children of Ernst-the-Bicycling-Wizard in heroes are: Grossman-the-Youngest-of-them-all(CSE331) Notkin-of-the-Superhuman-Beard(CSE331) Notkin-of-the-Superhuman-Beard(CSE403) Perkins-the-Magical-Singing-Instructor(CSE331])&gt; but was:&lt;...th two edges each.
+
+[Exception while running command: LoadGraph heroes staffSuperheroes.csv
+java.lang.IllegalArgumentException: no data or bad edges
+ at graph.GraphADT$Node.&lt;init&gt;(GraphADT.java:445)
+ at graph.GraphADT$Node.add(GraphADT.java:565)
+ at marvel.MarvelPaths.buildGraph(MarvelPaths.java:78)
+ at marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:248)
+ at marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:243)
+ at marvel.scriptTestRunner.MarvelTestDriver.executeCommand(MarvelTestDriver.java:96)
+ at marvel.scriptTestRunner.MarvelTestDriver.runTests(MarvelTestDriver.java:70)
+ at marvel.scriptTestRunner.ScriptFileTests.runScriptFile(ScriptFileTests.java:153)
+ at marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:179)
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+ at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+ at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+ at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+ at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+ at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+ at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+ at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ at java.base/java.lang.Thread.run(Thread.java:832)
+Exception while running command: ListChildren heroes Ernst-the-Bicycling-Wizard
+java.lang.NullPointerException: Cannot invoke &quot;java.util.Map.get(Object)&quot; because &quot;nodes&quot; is null
+ at marvel.scriptTestRunner.MarvelTestDriver.listChildren(MarvelTestDriver.java:219)
+ at marvel.scriptTestRunner.MarvelTestDriver.listChildren(MarvelTestDriver.java:214)
+ at marvel.scriptTestRunner.MarvelTestDriver.executeCommand(MarvelTestDriver.java:93)
+ at marvel.scriptTestRunner.MarvelTestDriver.runTests(MarvelTestDriver.java:70)
+ at marvel.scriptTestRunner.ScriptFileTests.runScriptFile(ScriptFileTests.java:153)
+ at marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:179)
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+ at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+ at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+ at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+ at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+ at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+ at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+ at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ at java.base/java.lang.Thread.run(Thread.java:832])&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:193)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+</failure>
+  </testcase>
+  <testcase name="checkOutput[exampleTestSimpleBFSTwoHops]" classname="marvel.scriptTestRunner.ScriptFileTests" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

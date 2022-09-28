@@ -1,0 +1,13 @@
+-classpath 'C:\\Users\\chloe\\IdeaProjects\\cse331-21sp-rushcl20\\hw-marvel\\build\\classes\\java\\main;C:\\Users\\chloe\\IdeaProjects\\cse331-21sp-rushcl20\\hw-marvel\\build\\resources\\main;C:\\Users\\chloe\\IdeaProjects\\cse331-21sp-rushcl20\\hw-graph\\build\\libs\\hw-graph.jar'
+-d 'C:\\Users\\chloe\\IdeaProjects\\cse331-21sp-rushcl20\\hw-marvel\\build\\docs\\javadoc'
+-doctitle 'hw-marvel API'
+-notimestamp 
+-quiet 
+-tag 'spec.modifies:a:Modifies:'
+-tag 'spec.effects:a:Effects:'
+-tag 'spec.requires:a:Requires:'
+-tag 'spec.specfield:a:Specfield:'
+-tag 'spec.derivedfield:a:Derived Field:'
+-windowtitle 'hw-marvel API'
+'C:\\Users\\chloe\\IdeaProjects\\cse331-21sp-rushcl20\\hw-marvel\\src\\main\\java\\marvel\\MarvelParser.java'
+'C:\\Users\\chloe\\IdeaProjects\\cse331-21sp-rushcl20\\hw-marvel\\src\\main\\java\\marvel\\MarvelPaths.java'
