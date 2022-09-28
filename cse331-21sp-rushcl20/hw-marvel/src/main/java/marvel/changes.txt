@@ -1,0 +1,9 @@
+Briefly list any changes you made to your graph class during hw-marvel, and why you made those changes.
+
+- removed toString methods in GraphADT and Node classes, removed toString test in JUnit tests because unnecessary;
+  was really for script tests
+- changed Node type from int to Object to account for list holding different types of objects
+- changed edge type for Node from List to Map to hold edge name and node
+- changed get method in Graph class from get(index) to get(Object) where Object is edge in order to find edges
+- added containsEdge method to Graph class to see if edge exists before adding/removing
+- removed indexOf method in Node class because changed edges from List to Map
