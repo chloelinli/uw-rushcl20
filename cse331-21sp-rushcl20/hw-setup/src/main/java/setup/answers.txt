@@ -1,0 +1,35 @@
+## CSE 331 hw-setup Questions
+## Part 6
+
+1. Why did Fibonacci fail the testThrowsIllegalArgumentException< test? What (if anything) did
+you have to do to fix it? If you did not have to change anything to fix this issue, explain why.
+
+Fibonacci originally failed test because the condition was for if n<=0, but the test was looking for
+if a negative number (i.e. n<0) was input. In order to fix this, I deleted the equals (=) sign in the
+condition.
+
+2. Why did Fibonacci fail the testBaseCase test? What (if anything) did you have to do to fix
+it? If you did not have to change anything to fix this issue, explain why.
+
+Fibonacci failed the base case test because it returned 1 for any n<=2 that skipped the exception. However,
+the 0th and 1st indices were to return 1, while the 2nd index returned 1+1 -> 2, so to fix this I changed
+the 2 to a 1 in the condition, i.e. n<=1.
+
+3.Why did Fibonacci fail the testInductiveCase test? What (if anything) did you have to do to
+fix it? If you did not have to change anything to fix this issue, explain why.
+
+Fibonacci failed the recursive case because it was subtracting rather than adding the previous two
+Fibonacci numbers, so to fix this I changed the minus sign (-) to a plus sign (+) in the return statement.
+
+Notes:
+Added Comparator to Ball.java
+-> public class Ball "implements Comparator<Ball>"" {
+->  /**
+     * override method
+     * @param b1 ball 1 to compare to ball 2
+     * @param b2 ball 2
+     * @return comparison result (+ for b2, - for b1, 0 if same)
+     */
+    public int compare(Ball b1, Ball b2) {
+        return (int) (b1.getVolume() - b2.getVolume());
+    }
