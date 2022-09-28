@@ -1,0 +1,168 @@
+## CSE 331 hw-poly Questions
+## Part 0
+###########################################################################
+
+1. Multiplication Pseudocode
+r = 0
+    {Inv_1: r = q * (p_0 + p_1 + ... + p_{i-1}) where p_i is ith term of p}
+    foreach term, t_p, in p
+        {Inv_2: r = (q_0 + q_1 + ... + q_{j-1}) * p_i where q_j is jth term of q}
+        foreach term, t_q, in q
+            if both coeff not 0 insert t_q * t_p in r
+
+2. Division Pseudocode
+r = 0
+s = q
+    set s = q by making a term-by-term copy of all terms in q to s
+    {Inv_1: r = (s_0 + s_1 + ... + s_{i-1}) / p where s_i is ith term of s}
+    foreach term, t_s, in s
+        if s not 0 and degree of t_s is less than highest degree of p
+            break
+        set temp val where coeff is coeff_s_i / coeff_p and degree is deg_q_s - deg_p (for highest term p)
+        insert temp val in r as new term
+        t = 0
+        {Inv_2: t = temp val * (p_0 + p_1 + ... + p_{j-1}) where j is jth term of p}
+        foreach term, t_p, in p
+            insert temp val * t_p in t as new term
+        {Inv_3: q = q - (t_0 + t_1 + ... + t_{k-1}) where k is kth term of t}
+        foreach term, t_t, in t
+            if any term, t_s, in s has same degree as t_t
+                then replace t_s in s with difference of t_s and t_t
+                but if difference not 0, break
+
+                else insert negative t_t in s as new term
+
+3. Division Example: (x3+x-1) / (x+1) = x2-x+2
+p=(x+1)
+q=(x3+x-1)
+r=0
+s=copy of q=(x3+x-1)
+foreach term, t_s, in s
+    Iteration 1: t_s=x3, r=0, p=(x+1), s=(x3+x-1)
+        [if s not 0 and degree of t_s is less than highest degree of p] NO
+        [set temp val where coeff is coeff_s_i / coeff_p and degree is deg_s - deg_p] temp val=x2
+        [insert temp val in r as new term] r=x2
+        t=0
+        foreach term, t_p, in p
+            Iteration 1: t_p=x, temp val=x2, p=(x+1), t=0
+                [insert temp val * t_p in t as new term] t=x3
+            Iteration 2: t_p=1, temp val=x2, p=(x+1), t=x3
+                [insert temp val * t_p in t as new term] t=x3+x2
+        foreach term, t_t, in t
+            Iteration 1: t_t=x3, s=(x3+x-1), t=x3+x2
+                [if any term, t_s, in s has same degree as t_t] YES
+                [then replace t_s in s with difference of t_s and t_t] t_s-t_t=0, so now s=(x-1)
+                    [but if difference not 0, break] NO
+                [else insert negative t_t in s as new term]
+            Iteration 2: t_t=x_2, s=(x-1), t=x3+x2
+                [if any term, t_s, in s has same degree as t_t] NO
+                [then replace t_s in s with difference of t_s and t_t]
+                    [but if difference not 0, break] NO
+                [else insert negative t_t in s as new term] s=(-x2+x-1)
+    Iteration 2: t_s=x2, r=x2, p=(x+1), s=(-x2+x-1)
+        [if s not 0 and degree of t_s is less than highest degree of p] NO
+        [set temp val where coeff is coeff_s_i / coeff_p and degree is deg_s - deg_p] temp val=-x
+        [insert temp val in r as new term] r=x2-x
+        t=0
+        foreach term, t_p, in p
+            Iteration 1: t_p=x, temp val=-x, p=(x+1), t=0
+                [insert temp val * t_p in t as new term] t=-x2
+            Iteration 2: t_p=1, temp val=-x, p=(x+1), t=-x2
+                [insert temp val * t_p in t as new term] t=(-x2-x)
+        foreach term, t_t, in t
+            Iteration 1: t_t=-x2, s=(-x2+x-1), t=-x2-x
+                [if any term, t_s, in s has same degree as t_t] YES
+                [then replace t_s in s with difference of t_s and t_t] t_s-t_t=0, so now s=(x-1)
+                    [but if difference not 0, break] NO
+                [else insert negative t_t in s as new term]
+            Iteration 2: t_t=-x, s=(x+1), t=-x
+                [if any term, t_s, in s has same degree as t_t] YES
+                [then replace t_s in s with difference of t_s and t_t] t_s-t_t=2x, so s=(2x-1)
+                    [but if difference not 0, break] NO
+                [else insert negative t_t in s as new term]
+    Iteration 3: t_s=2x, r=x2-x, p=(x+1), s=(2x-1)
+        [if s not 0 and degree of t_s is less than highest degree of p] NO
+        [set temp val where coeff is coeff_s_i / coeff_p and degree is deg_s - deg_p] temp val=2
+        [insert temp val in r as new term] r=x2-x+2
+        t=0
+        foreach term, t_p, in p
+            Iteration 1: t_p=x, temp val=2, p=(x+1), t=0
+                [insert temp val * t_p in t as new term] t=2x
+            Iteration 2: t_p=1, temp val=2, p=(x+1), t=2x
+                [insert temp val * t_p in t as new term] t=2x+2
+        foreach term, t_t, in t
+            Iteration 1: t_t=2x, s=(2x-1), t=2x+2
+                [if any term, t_s, in s has same degree as t_t] YES
+                [then replace t_s in s with difference of t_s and t_t] t_s-t_t=0, sp now s=-1
+                    [but if difference not 0, break] NO
+                [else insert negative t_t in s as new term]
+            Iteration 2: t_t=2, s=-1, t=2x+2
+                [if any term, t_s, in s has same degree as t_t] YES
+                [then replace t_s in s with difference of t_s and t_t] t_s-t_t=-3, so now s=-3
+                    [but if difference not 0, break] YES
+                [else insert negative t_t in s as new term]
+We are done! r=x2-x+2
+
+## Part 1
+###########################################################################
+
+1. Weakened Rep Invariant
+(Second) constructor does not reduce number; adv: less lines of code, dis: might make comparisons difficult because of
+ bigger numbers
+
+hashCode may return the wrong value for equivalent numbers, if there is no checking for reduced numbers; adv: might
+prevent collisions, dis: might create even more collisions
+
+equals method might have equiv fractions but numbers aren't equal; would return false so must reduce numbers;
+adv: not really any, dis: has to find gcd, set variables, then compare, meaning extra code, less efficient
+
+toString also has to reduce numbers, for same reason as equals method
+
+2. Alternate add, sub, mul, div
+The changes would fail the rep invariant because we set the RatNum fields and do not check that the number is reduced.
+
+3. Constructor checkReps
+We only need to call checkRep at the end of the constructor because we guarantee the new RatNum passes the rep
+invariant.
+
+
+## Part 2
+###########################################################################
+
+1. Calls to checkRep in RatTerm
+End of constructor - guarantees new RatTerm passes rep invariant.
+
+2. Weakened Rep Invariant
+Constructor would not set exponent to 0; adv/dis: not really any
+
+hashCode would need to return 0 if coefficient is 0, otherwise exponent would change hashcode value; adv: not really
+any, dis: extra code
+
+equals would need to return true if for zero coefficients, since exponents would make it return false; don't want to
+check exponents on zero numbers; adv: zero coefficients return 0 regardless of exponents, dis: has to check extra code
+
+3. Alternate Rep Invariant
+Constructor would have to set exponent to 0 if coefficient was NaN
+
+Because the methods only check if the coefficient is NaN, I do not see where any would have to be modified, even though
+the question asks for two specific ones.
+
+4. Preferred Invariants
+I prefer only coeff.equals(RatNum.ZERO) -> expt = 0 because if one is true, we know the other must be true in order to
+pass the rep invariant. Having coeff.isNaN() -> expt = 0 is unnecessary because we only check if the coefficient is NaN.
+
+
+## Part 3
+###########################################################################
+
+1. Calls to checkRep in RatPoly
+Only called at end of constructors because when returning RatPoly objects, I would either return the ZERO or NaN
+RatPolys, or a new one that I would want to check.
+
+2. Alternate Representation
+Adv: check only first element of degree to check highest degree, dis: too much to have to keep track of rather than one
+single element with its own fields.
+
+The original representation of a list of RatTerms worked just fine because we could save the next RatTerm, and then save
+ the different values its fiels held, rather than having to keep track of the indexing to find the right exponents and
+ coefficients.
