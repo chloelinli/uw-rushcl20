@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"marvel","l":"MarvelParser"},{"p":"marvel","l":"MarvelPaths"}];updateSearchResults();
