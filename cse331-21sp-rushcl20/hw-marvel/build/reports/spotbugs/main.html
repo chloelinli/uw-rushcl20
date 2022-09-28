@@ -1,0 +1,348 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		cse331 (spotbugsMain)</p>
+      <p>SpotBugs version: 4.2.1</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>C:\Users\chloe\IdeaProjects\cse331-21sp-rushcl20\hw-marvel\build\classes\java\main\marvel\MarvelParser.class</li>
+         <li>C:\Users\chloe\IdeaProjects\cse331-21sp-rushcl20\hw-marvel\build\classes\java\main\marvel\MarvelPaths.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>130 lines of code analyzed,
+	in 2 classes, 
+	in 1 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">2</td>
+            <td align="right">15.38</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">4</td>
+            <td align="right">30.77</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>6</b>
+            </td>
+            <td align="right">
+               <b>46.15</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_I18N">Internationalization Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_I18N">Internationalization Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+            </td>
+            <td align="right">3</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>6</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e23');">
+            <td>
+               <span class="priority-1">EC</span>
+            </td>
+            <td>Call to String.equals(Character) in marvel.MarvelPaths.main(String[])</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e23" style="display: none;">
+                  <a href="#EC_UNRELATED_TYPES">Bug type EC_UNRELATED_TYPES (click for details)</a>
+                  <br/>In class marvel.MarvelPaths<br/>In method marvel.MarvelPaths.main(String[])<br/>Actual type Character<br/>Expected String<br/>Return value of Character.valueOf(char) of type Character<br/>Return value of String.substring(int, int) of type String<br/>String.equals(Object) used to determine equality<br/>At MarvelPaths.java:[line 24]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_I18N">Internationalization Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e8');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in marvel.MarvelPaths.main(String[]): new java.util.Scanner(InputStream)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e8" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class marvel.MarvelPaths<br/>In method marvel.MarvelPaths.main(String[])<br/>Called method new java.util.Scanner(InputStream)<br/>At MarvelPaths.java:[line 21]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_PERFORMANCE">Performance Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e67');">
+            <td>
+               <span class="priority-2">WMI</span>
+            </td>
+            <td>marvel.MarvelPaths.buildGraph(String) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e67" style="display: none;">
+                  <a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+                  <br/>In class marvel.MarvelPaths<br/>In method marvel.MarvelPaths.buildGraph(String)<br/>At MarvelPaths.java:[line 58]<br/>Another occurrence at MarvelPaths.java:[line 74]<br/>Another occurrence at MarvelPaths.java:[line 88]<br/>Another occurrence at MarvelPaths.java:[line 92]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e85');">
+            <td>
+               <span class="priority-2">WMI</span>
+            </td>
+            <td>marvel.MarvelPaths.findPath(Map, String, String) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e85" style="display: none;">
+                  <a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+                  <br/>In class marvel.MarvelPaths<br/>In method marvel.MarvelPaths.findPath(Map, String, String)<br/>At MarvelPaths.java:[line 142]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e97');">
+            <td>
+               <span class="priority-2">WMI</span>
+            </td>
+            <td>marvel.MarvelPaths.mainFindPath(GraphADT, String, String) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e97" style="display: none;">
+                  <a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+                  <br/>In class marvel.MarvelPaths<br/>In method marvel.MarvelPaths.mainFindPath(GraphADT, String, String)<br/>At MarvelPaths.java:[line 175]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e52');">
+            <td>
+               <span class="priority-2">RV</span>
+            </td>
+            <td>Return value of graph.GraphADT$Node.add(Map) ignored, is this OK in marvel.MarvelPaths.buildGraph(String)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e52" style="display: none;">
+                  <a href="#RV_RETURN_VALUE_IGNORED_INFERRED">Bug type RV_RETURN_VALUE_IGNORED_INFERRED (click for details)</a>
+                  <br/>In class marvel.MarvelPaths<br/>In method marvel.MarvelPaths.buildGraph(String)<br/>Called method graph.GraphADT$Node.add(Map)<br/>At MarvelPaths.java:[line 78]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+      </h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      <h2>
+         <a name="EC_UNRELATED_TYPES">EC_UNRELATED_TYPES: Call to equals() comparing different types</a>
+      </h2>
+
+<p> This method calls equals(Object) on two references of different
+class types and analysis suggests they will be to objects of different classes
+at runtime. Further, examination of the equals methods that would be invoked suggest that either
+this call will always return false, or else the equals method is not be symmetric (which is
+a property required by the contract
+for equals in class Object).
+</p>
+
+    <h2>
+         <a name="RV_RETURN_VALUE_IGNORED_INFERRED">RV_RETURN_VALUE_IGNORED_INFERRED: Method ignores return value, is this OK?</a>
+      </h2>
+
+<p>This code calls a method and ignores the return value. The return value
+is the same type as the type the method is invoked on, and from our analysis it looks
+like the return value might be important (e.g., like ignoring the
+return value of <code>String.toLowerCase()</code>).
+</p>
+<p>We are guessing that ignoring the return value might be a bad idea just from
+a simple analysis of the body of the method. You can use a @CheckReturnValue annotation
+to instruct SpotBugs as to whether ignoring the return value of this method
+is important or acceptable.
+</p>
+<p>Please investigate this closely to decide whether it is OK to ignore the return value.
+</p>
+
+    <h2>
+         <a name="WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR: Inefficient use of keySet iterator instead of entrySet iterator</a>
+      </h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        </body>
+</html>

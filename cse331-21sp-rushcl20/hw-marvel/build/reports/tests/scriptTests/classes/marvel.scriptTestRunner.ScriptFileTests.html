@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class marvel.scriptTestRunner.ScriptFileTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class marvel.scriptTestRunner.ScriptFileTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/marvel.scriptTestRunner.html">marvel.scriptTestRunner</a> &gt; ScriptFileTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">2</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">30.049s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">50%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="checkOutput[exampleTestMarvelOneHop]"></a>
+<h3 class="failures">checkOutput[exampleTestMarvelOneHop]</h3>
+<span class="code">
+<pre>org.junit.runners.model.TestTimedOutException: test timed out after 30000 milliseconds
+	at app//graph.GraphADT.checkRep(GraphADT.java:398)
+	at app//graph.GraphADT.add(GraphADT.java:173)
+	at app//marvel.MarvelPaths.buildGraph(MarvelPaths.java:60)
+	at app//marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:248)
+	at app//marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:243)
+	at app//marvel.scriptTestRunner.MarvelTestDriver.executeCommand(MarvelTestDriver.java:96)
+	at app//marvel.scriptTestRunner.MarvelTestDriver.runTests(MarvelTestDriver.java:70)
+	at app//marvel.scriptTestRunner.ScriptFileTests.runScriptFile(ScriptFileTests.java:153)
+	at app//marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:179)
+	at java.base@15.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@15.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base@15.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@15.0.1/java.lang.reflect.Method.invoke(Method.java:564)
+	at app//org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at app//org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at app//org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at app//org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app//org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at app//org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.base@15.0.1/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base@15.0.1/java.lang.Thread.run(Thread.java:832)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="checkOutput[exampleTestParserSmallishGraph]"></a>
+<h3 class="failures">checkOutput[exampleTestParserSmallishGraph]</h3>
+<span class="code">
+<pre>org.junit.ComparisonFailure: exampleTestParserSmallishGraph expected:&lt;...th two edges each.
+
+[loaded graph heroes
+the children of Ernst-the-Bicycling-Wizard in heroes are: Grossman-the-Youngest-of-them-all(CSE331) Notkin-of-the-Superhuman-Beard(CSE331) Notkin-of-the-Superhuman-Beard(CSE403) Perkins-the-Magical-Singing-Instructor(CSE331])&gt; but was:&lt;...th two edges each.
+
+[Exception while running command: LoadGraph heroes staffSuperheroes.csv
+java.lang.IllegalArgumentException: no data or bad edges
+ at graph.GraphADT$Node.&lt;init&gt;(GraphADT.java:445)
+ at graph.GraphADT$Node.add(GraphADT.java:565)
+ at marvel.MarvelPaths.buildGraph(MarvelPaths.java:75)
+ at marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:248)
+ at marvel.scriptTestRunner.MarvelTestDriver.loadGraph(MarvelTestDriver.java:243)
+ at marvel.scriptTestRunner.MarvelTestDriver.executeCommand(MarvelTestDriver.java:96)
+ at marvel.scriptTestRunner.MarvelTestDriver.runTests(MarvelTestDriver.java:70)
+ at marvel.scriptTestRunner.ScriptFileTests.runScriptFile(ScriptFileTests.java:153)
+ at marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:179)
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+ at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+ at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+ at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+ at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+ at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+ at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+ at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ at java.base/java.lang.Thread.run(Thread.java:832)
+Exception while running command: ListChildren heroes Ernst-the-Bicycling-Wizard
+java.lang.NullPointerException: Cannot invoke &quot;java.util.Map.get(Object)&quot; because &quot;nodes&quot; is null
+ at marvel.scriptTestRunner.MarvelTestDriver.listChildren(MarvelTestDriver.java:219)
+ at marvel.scriptTestRunner.MarvelTestDriver.listChildren(MarvelTestDriver.java:214)
+ at marvel.scriptTestRunner.MarvelTestDriver.executeCommand(MarvelTestDriver.java:93)
+ at marvel.scriptTestRunner.MarvelTestDriver.runTests(MarvelTestDriver.java:70)
+ at marvel.scriptTestRunner.ScriptFileTests.runScriptFile(ScriptFileTests.java:153)
+ at marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:179)
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+ at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+ at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+ at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+ at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+ at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+ at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+ at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ at java.base/java.lang.Thread.run(Thread.java:832])&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at marvel.scriptTestRunner.ScriptFileTests.checkOutput(ScriptFileTests.java:193)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">checkOutput[exampleTestEdgeCases]</td>
+<td class="success">0.022s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">checkOutput[exampleTestMarvelOneHop]</td>
+<td class="failures">30.017s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">checkOutput[exampleTestParserSmallishGraph]</td>
+<td class="failures">0.007s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="success">checkOutput[exampleTestSimpleBFSTwoHops]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.8.3</a> at May 20, 2021, 8:52:50 PM</p>
+</div>
+</div>
+</body>
+</html>

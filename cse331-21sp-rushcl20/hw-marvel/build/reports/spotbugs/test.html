@@ -1,0 +1,404 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		cse331 (spotbugsTest)</p>
+      <p>SpotBugs version: 4.2.1</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>C:\Users\chloe\IdeaProjects\cse331-21sp-rushcl20\hw-marvel\build\classes\java\test\marvel\junitTests\MarvelSmallTests.class</li>
+         <li>C:\Users\chloe\IdeaProjects\cse331-21sp-rushcl20\hw-marvel\build\classes\java\test\marvel\scriptTestRunner\MarvelTestDriver$CommandException.class</li>
+         <li>C:\Users\chloe\IdeaProjects\cse331-21sp-rushcl20\hw-marvel\build\classes\java\test\marvel\scriptTestRunner\MarvelTestDriver.class</li>
+         <li>C:\Users\chloe\IdeaProjects\cse331-21sp-rushcl20\hw-marvel\build\classes\java\test\marvel\scriptTestRunner\ScriptFileTests.class</li>
+         <li>C:\Users\chloe\IdeaProjects\cse331-21sp-rushcl20\hw-marvel\build\classes\java\test\marvel\testUtils\ExitHandler.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>285 lines of code analyzed,
+	in 5 classes, 
+	in 3 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">3</td>
+            <td align="right">10.53</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">4</td>
+            <td align="right">14.04</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>7</b>
+            </td>
+            <td align="right">
+               <b>24.56</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_I18N">Internationalization Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_I18N">Internationalization Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>7</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_EXPERIMENTAL">Experimental Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e101');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>marvel.scriptTestRunner.ScriptFileTests.runScriptFile(File) may fail to clean up java.io.Reader on checked exception</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e101" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Bug type OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE (click for details)</a>
+                  <br/>In class marvel.scriptTestRunner.ScriptFileTests<br/>In method marvel.scriptTestRunner.ScriptFileTests.runScriptFile(File)<br/>Reference type java.io.Reader<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at ScriptFileTests.java:[line 149] is not discharged<br/>Path continues at ScriptFileTests.java:[line 150]<br/>Remaining obligations: {Reader x 1}</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_I18N">Internationalization Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e71');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in marvel.scriptTestRunner.ScriptFileTests.runScriptFile(File): new java.io.FileReader(File)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e71" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class marvel.scriptTestRunner.ScriptFileTests<br/>In method marvel.scriptTestRunner.ScriptFileTests.runScriptFile(File)<br/>Called method new java.io.FileReader(File)<br/>At ScriptFileTests.java:[line 149]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e86');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in marvel.scriptTestRunner.ScriptFileTests.runScriptFile(File): new java.io.FileWriter(File)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e86" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class marvel.scriptTestRunner.ScriptFileTests<br/>In method marvel.scriptTestRunner.ScriptFileTests.runScriptFile(File)<br/>Called method new java.io.FileWriter(File)<br/>At ScriptFileTests.java:[line 150]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_PERFORMANCE">Performance Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e47');">
+            <td>
+               <span class="priority-2">WMI</span>
+            </td>
+            <td>marvel.scriptTestRunner.MarvelTestDriver.listChildren(String, String) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e47" style="display: none;">
+                  <a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+                  <br/>In class marvel.scriptTestRunner.MarvelTestDriver<br/>In method marvel.scriptTestRunner.MarvelTestDriver.listChildren(String, String)<br/>At MarvelTestDriver.java:[line 224]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e59');">
+            <td>
+               <span class="priority-2">WMI</span>
+            </td>
+            <td>marvel.scriptTestRunner.MarvelTestDriver.loadGraph(String, String) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e59" style="display: none;">
+                  <a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+                  <br/>In class marvel.scriptTestRunner.MarvelTestDriver<br/>In method marvel.scriptTestRunner.MarvelTestDriver.loadGraph(String, String)<br/>At MarvelTestDriver.java:[line 261]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e17');">
+            <td>
+               <span class="priority-1">DLS</span>
+            </td>
+            <td>Dead store to mp in marvel.junitTests.MarvelSmallTests.testGraph()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e17" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class marvel.junitTests.MarvelSmallTests<br/>In method marvel.junitTests.MarvelSmallTests.testGraph()<br/>Local variable named mp<br/>At MarvelSmallTests.java:[line 23]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e34');">
+            <td>
+               <span class="priority-2">UrF</span>
+            </td>
+            <td>Unread public/protected field: marvel.junitTests.MarvelSmallTests.globalTimeout</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e34" style="display: none;">
+                  <a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Bug type URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+                  <br/>In class marvel.junitTests.MarvelSmallTests<br/>Field marvel.junitTests.MarvelSmallTests.globalTimeout<br/>At MarvelSmallTests.java:[line 19]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+      </h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because SpotBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    <h2>
+         <a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+      </h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      <h2>
+         <a name="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE: Method may fail to clean up stream or resource on checked exception</a>
+      </h2>
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          For sending feedback, check:
+          </p>
+          <ul>
+            <li><a href="https://github.com/spotbugs/spotbugs/blob/master/CONTRIBUTING.md">contributing guideline</a></li>
+            <li><a href="https://github.com/spotbugs/discuss/issues?q=">malinglist</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      <h2>
+         <a name="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD: Unread public/protected field</a>
+      </h2>
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    <h2>
+         <a name="WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR: Inefficient use of keySet iterator instead of entrySet iterator</a>
+      </h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        </body>
+</html>
